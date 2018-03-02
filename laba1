@@ -1,3 +1,6 @@
+zadanie #1;
+
+
 #include <iostream>
 using namespace std;
 
@@ -13,3 +16,38 @@ int main()
 	return 0;
 }
 
+
+zadanie #2;
+
+
+#include <iostream>
+using namespace std;
+
+void takenumber()
+{
+	int N;
+	char yes[35] = { "Number is divisible by 7" };
+	char yes1[35] = { "Number is divisible by 15" };
+	char yes2[35] = { "Number is divisible by 7 and 15" };
+
+	if (N % 7 == 0)
+		cout << yes[35]; cout << endl;
+	if (N % 15 == 0)
+		cout << yes1[35]; cout << endl;
+	if (N % 15 == 0 && N % 7 == 0)
+	    cout << yes2[35]; cout << endl;
+	return N;
+}
+
+
+int main()
+{
+	int N;
+	cout << "Input number(N): "; cin >> N; cout << endl;
+	if (N % 3 == 0)
+		cout << "Number is divisible by 3" << endl;
+	if (N % 5 == 0)
+		cout << "Number is dividable by 5" << endl;
+	system("pause");
+	return 0;
+}
