@@ -1,14 +1,15 @@
 #include <iostream>
-#include <cmath>
-using namespace std; 
+using namespace std;
 
-int main(){
-	int number;
-	cout << "Input natural number: "; cin >> number;
-	if (number % 3 == 0)
-		cout << "Dividable by 3" << endl;
-	if (number % 5 == 0)
-		cout << "Dividable by 5" << endl;
+int main()
+{
+	int N;
+	cout << "Input number(N): "; cin >> N; cout << endl;
+	if (N % 3 == 0)
+		cout << "Number is divisible by 3" << endl;
+	if (N % 5 == 0)
+		cout << "Number is dividable by 5" << endl;
 	system("pause");
 	return 0;
 }
+
