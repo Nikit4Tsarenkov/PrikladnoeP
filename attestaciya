@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main() {
+	char *str = new char[100];
+	int count = 0;
+	int length = 0;
+	int max_length = 0;
+	int pos = 0;
+	cin.getline(str, 100);
+ 	for (int i = 0; i < 100	; i++){
+		if (str[i + 1] = " " || i == strlen(str) - 1){
+			if (length > max_length)
+			{ max_length = length; }
+			length = 0;
+		}
+		else {
+			length++;
+		}
+	}
+	cout << max_length << endl;
+	length = 0;
+	for (int i = 0; i < 100	; i++){
+		if (str[i + 1] = " " || i == strlen(str) - 1){
+			count++;
+			if (length == max_length){
+				for (int j = i - length; j <= i; j++){
+					cout << str[j];
+				}
+				cout << "---" << count << " position ";
+				}
+				length = 0;
+			}
+			else{
+				length++;
+			}
+	}
+	system("pause");
+	return 0;
+}
