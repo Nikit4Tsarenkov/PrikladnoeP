@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	const int numOfSportsmen = 1, numOfattemp = 3;
+	double arr[numOfSportsmen][numOfattemp];
+	double maxResult = 0, numMaxAthlete, numMaxAttemp;
+	for (int i = 0; i < numOfSportsmen; i++)
+	{
+		cout << "Input result of " << i + 1 << " athlete:" << endl;
+		for (int j = 0; j < numOfattemp; j++)
+		{
+			cout << j + 1 << " attemp:";
+			cin >> arr[i][j];
+
+			if (arr[i][j] > maxResult)
+			{
+				maxResult = arr[i][j];
+				numMaxAthlete = i;
+				numMaxAttemp = j;
+			}
+		}
+	}
+	cout << "The best athletes:" << endl;
+	for (int i = 0; i < numOfSportsmen; i++)
+		for (int j = 0; j < numOfattemp; j++)
+		{
+			if (arr[i][j] == maxResult)
+			{
+
+
+				cout << "Sportsmen #" << i + 1 << "  ;  Attemp #" << j + 1 << "  ;  Result:" << maxResult << endl;
+
+			}
+
+
+		}
+
+
+
+
+	system("pause");
+	return 0;
+}
