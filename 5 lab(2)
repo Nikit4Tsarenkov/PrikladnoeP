@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+
+	const int numOfsportsmens = 5,numOfattemps = 3; 
+	double arrOfresults[numOfsportsmens][numOfattemps]; 
+
+	cout << "Input results of sportsmens:\n";
+	for (int i = 0; i < numOfsportsmens; i++)
+	{
+		cout << "# " << (i + 1) << " athlete: " ;
+		for (int j = 0; j < numOfattemps; j++)
+			cin >> arrOfresults[i][j];
+	}
+
+	double bestResult = arrOfresults[0][0];
+	int numb_ath, numb_att; 
+	for (int i = 0; i < numOfsportsmens; i++)
+	{
+		for (int j = 0; j < numOfattemps; j++)
+			if (bestResult < arrOfresults[i][j]) 
+			{
+				bestResult = arrOfresults[i][j];
+				numb_ath = i + 1; 
+				numb_att = j + 1; 
+			}
+	}
+
+	
+	cout << "\nThe best results:\n";
+	for (int i = 0; i < numOfsportsmens; i++)
+		for (int j = 0; j < numOfattemps; j++)
+			if (bestResult == arrOfresults[i][j]) 
+			{
+				cout << "# athlete - " << (i + 1) 
+					<< "\n# attemp - " << (j + 1) << endl << endl;
+			}
+
+	system("pause");
+	return 0;
+}
