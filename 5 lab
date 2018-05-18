@@ -1,44 +1,39 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-	const int numOfSportsmen = 5, numOfattemp = 3;
-	double arr[numOfSportsmen][numOfattemp];
-	double maxResult = 0, numMaxAthlete, numMaxAttemp;
-	for (int i = 0; i < numOfSportsmen; i++)
-	{
-		cout << "Input result of " << i + 1 << " athlete:" << endl;
-		for (int j = 0; j < numOfattemp; j++)
-		{
-			cout << j + 1 << " attemp:";
-			cin >> arr[i][j];
+void input(double arr[5][3]) {
 
-			if (arr[i][j] > maxResult)
-			{
-				maxResult = arr[i][j];
-				numMaxAthlete = i;
-				numMaxAttemp = j;
+	for (int i = 0; i < 5; i++) {
+		std::cout << i + 1 << " sportsman" << std::endl;
+		for (int j = 0; j < 3; j++) {
+			std::cout << " result #" << j + 1 << " : "; std::cin >> arr[i][j];
+		}
+	}
+}
+double result(double arr[5][3], double max) {
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (arr[i][j] > max) { max = arr[i][j]; }
+		}
+	}
+	return max;
+}
+void output(double arr[5][3], double max) {
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (arr[i][j] == max) {
+				std::cout << "Sportsman " << i << " has the best result " << max << "m. at the " << j + 1 << " try." << std::endl;
 			}
 		}
 	}
-	cout << "The best athletes:" << endl;
-	for (int i = 0; i < numOfSportsmen; i++)
-		for (int j = 0; j < numOfattemp; j++)
-		{
-			if (arr[i][j] == maxResult)
-			{
-
-
-				cout << "Sportsmen #" << i + 1 << "  ;  Attemp #" << j + 1 << "  ;  Result:" << maxResult << endl;
-
-			}
-
-
-		}
-
-
-
+}
+int main()
+{
+	double max = 0;
+	double arr[5][3];
+	input(arr);
+	max = result(arr, max);
+	output(arr, max);
 
 	system("pause");
 	return 0;
