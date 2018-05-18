@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	const int numOfSportsmen = 1, numOfattemp = 3;
+	const int numOfSportsmen = 5, numOfattemp = 3;
 	double arr[numOfSportsmen][numOfattemp];
 	double maxResult = 0, numMaxAthlete, numMaxAttemp;
 	for (int i = 0; i < numOfSportsmen; i++)
